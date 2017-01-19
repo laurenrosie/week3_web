@@ -16,7 +16,6 @@ class Battle < Sinatra::Base
     @player_1_name = session[:player_1_name]
     @player_2_name = session[:player_2_name]
     erb :play
-
   end
 
 
@@ -25,6 +24,8 @@ class Battle < Sinatra::Base
     @player_2_points = '100'
     erb :hit_points
   end
+
+  
 
 
   # start the server if ruby file executed directly
