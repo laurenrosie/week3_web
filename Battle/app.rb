@@ -8,7 +8,7 @@ class Battle < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  post '/name' do
     if !params[:attacker]
       $game = Game.new(params[:player_1_name], params[:player_2_name])
     end
@@ -24,7 +24,7 @@ class Battle < Sinatra::Base
     end
     @p1_points = $game.player1.points
     @p2_points = $game.player2.points
-    @attacker = $attacker
+    @attacker = $game.attacker
     erb :play
   end
 
