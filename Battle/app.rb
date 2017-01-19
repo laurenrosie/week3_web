@@ -20,11 +20,12 @@ class Battle < Sinatra::Base
     @player_1_name = $game.player1.name
     @player_2_name = $game.player2.name
     if $attacker
-      $game.attack($game.player2)
+      @attacker = $game.attacker.name
+      $game.attack
+      $game.switch_attacker
     end
     @p1_points = $game.player1.points
     @p2_points = $game.player2.points
-    @attacker = $game.attacker
     erb :play
   end
 
