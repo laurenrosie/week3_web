@@ -11,5 +11,10 @@ feature "Players attacking" do
     click_button 'Attack'
     expect(page).to have_content 50
   end
+  scenario "Expect message when someone loses" do
+    sign_in_and_play
+    11.times { click_button 'Attack' }
+    expect(page).to have_content "has lost"
+  end
 
 end

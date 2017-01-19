@@ -26,6 +26,9 @@ class Battle < Sinatra::Base
     end
     @p1_points = $game.player1.points
     @p2_points = $game.player2.points
+    if $game.over?
+      @loser = $game.loser
+    end
     erb :play
   end
 

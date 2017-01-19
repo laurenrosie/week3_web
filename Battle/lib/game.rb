@@ -17,4 +17,12 @@ class Game
   def switch_attacker
     (attacker == player1) ? @attacker = player2 : @attacker = player1
   end
+
+  def over?
+    player1.points == 0 || player2.points == 0
+  end
+
+  def loser
+    player1.points == 0 ? player1.name : player2.name
+  end
 end
