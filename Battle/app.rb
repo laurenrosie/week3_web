@@ -24,10 +24,7 @@ class Battle < Sinatra::Base
     @player_2_points = '100'
     erb :hit_points
   end
-
   
-
-
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
