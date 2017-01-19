@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -20,7 +21,7 @@ class Battle < Sinatra::Base
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
     if $attacker
-      $player_1.attack($player_2)
+      Game.new.attack($player_2)
     end
     @p1_points = $player_1.points
     @p2_points = $player_2.points
