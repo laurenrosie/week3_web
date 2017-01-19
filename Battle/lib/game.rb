@@ -25,4 +25,12 @@ class Game
   def loser
     player1.points == 0 ? player1.name : player2.name
   end
+
+  def self.create(player_name_1, player_name_2)
+    @game ||= Game.new(player_name_1, player_name_2)
+  end
+
+  def self.instance
+    @game
+  end
 end
